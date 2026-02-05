@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Мовні курси</title>
+
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    background:#F6FAFD;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    margin-top:20px;
+}
+
+h1{
+    color:#0A1931;
+}
+
+button{
+    background:#1A3D63;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0A1931;
+}
+
+.option{
+    background:#B3CFE5;
+    padding:15px;
+    border-radius:10px;
+    margin:10px 0;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Головна -->
+<div id="home" class="card">
+    <h1>Вивчайте іноземні мови</h1>
+
+    <h3>Оберіть мову</h3>
+
+    <button onclick="showPage('goal')">Німецька</button>
+</div>
+
+
+<!-- Вибір цілі -->
+<div id="goal" class="card hidden">
+
+    <h1>З якою ціллю ви вивчаєте мову?</h1>
+
+    <div class="option" onclick="showPage('package')">
+        Підготовка до ЗНО
+    </div>
+
+    <div class="option" onclick="showPage('package')">
+        Розмовна мова
+    </div>
+
+    <div class="option" onclick="showPage('package')">
+        Підготовка до екзамену
+    </div>
+
+</div>
+
+
+<!-- Пакети -->
+<div id="package" class="card hidden">
+
+<h1>Оберіть пакет</h1>
+
+<div class="option">
+    <h3>Звичайний пакет</h3>
+    ✔ 8 занять на місяць <br>
+    ✔ Групові уроки <br>
+    ✔ Домашні завдання <br>
+
+    <button onclick="showPage('teacher')">Обрати</button>
+</div>
+
+
+<div class="option">
+    <h3>Преміум пакет</h3>
+    ✔ 12 занять на місяць <br>
+    ✔ Індивідуальні заняття <br>
+    ✔ Персональний план навчання <br>
+
+    <button onclick="showPage('teacher')">Обрати</button>
+</div>
+
+</div>
+
+
+<!-- Репетитори -->
+<div id="teacher" class="card hidden">
+
+<h1>Оберіть репетитора</h1>
+
+<div class="option">
+     Олена Іванова — 5 років досвіду
+</div>
+
+<div class="option">
+     Петро Дмитренко — 6 років досвіду
+</div>
+
+<div class="option">
+     Ольга Шевченко — 8 років досвіду
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showPage(page){
+    document.querySelectorAll(".card").forEach(el=>el.classList.add("hidden"))
+    document.getElementById(page).classList.remove("hidden")
+}
+
+</script>
+
+</body>
+</html>
